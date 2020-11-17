@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.slide-wrapper {
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  z-index: -1;
+  display: none;
+}
+
+.slide.active {
+  z-index: 1;
+}
+
+.slide img {
+  transition: all 4s ease-out;
+  position: relative;
+}
+
+.slide img.left-right {
+  transform: translateX(-100px) scale(1.5);
+  /* ↓ 任意変更 */
+  top: -50px;
+}
+
+.slide.active img.left-right {
+  transform: translateX(100px) scale(1.5);
+}
+
+.slide img.right-left {
+  transform: translateX(100px) scale(1.5);
+  /* ↓ 任意変更 */
+  top: 50px;
+}
+
+.slide.active img.right-left {
+  transform: translateX(-100px) scale(1.5);
+}
+
+.slide img.top-bottom {
+  transform: translateY(-100px) scale(1.5);
+  /* ↓ 任意変更 */
+  /* top: 50px;  */
+}
+
+.slide.active img.top-bottom {
+  transform: translateY(100px) scale(1.5);
+}
+
+.slide img.bottom-top {
+  transform: translateY(100px) scale(1.5);
+  /* ↓ 任意変更 */
+  top: -50px;
+}
+
+.slide.active img.bottom-top {
+  transform: translateY(-100px) scale(1.5);
+}
